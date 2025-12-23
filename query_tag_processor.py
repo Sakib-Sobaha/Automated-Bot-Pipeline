@@ -265,9 +265,45 @@ Tag:"""
         return self.split_to_csv_files(output_dir)
 
 
+def print_info_box():
+    """Print a beautiful info box about input CSV requirements."""
+    box_width = 54
+    
+    print()
+    print("╔" + "═" * box_width + "╗")
+    print("║" + " " * box_width + "║")
+    print("║" + "   📋 INPUT CSV REQUIREMENTS".center(box_width-1) + "║")
+    print("║" + " " * box_width + "║")
+    print("╠" + "═" * box_width + "╣")
+    print("║" + " " * box_width + "║")
+    print("║" + "   Input CSV must contain 3 columns:".ljust(box_width) + "║")
+    print("║" + " " * box_width + "║")
+    print("║" + "     • query   → The user query/question".ljust(box_width) + "║")
+    print("║" + "     • answer  → The corresponding answer".ljust(box_width) + "║")
+    print("║" + "     • id      → Group ID (similar queries".ljust(box_width) + "║")
+    print("║" + "                  share the same ID)".ljust(box_width) + "║")
+    print("║" + " " * box_width + "║")
+    print("╠" + "═" * box_width + "╣")
+    print("║" + " " * box_width + "║")
+    print("║" + "   Example:".ljust(box_width) + "║")
+    print("║" + "   ┌────────────────────┬───────────┬────┐".ljust(box_width) + "║")
+    print("║" + "   │ query              │ answer    │ id │".ljust(box_width) + "║")
+    print("║" + "   ├────────────────────┼───────────┼────┤".ljust(box_width) + "║")
+    print("║" + "   │ How to vote?       │ You can...│ 1  │".ljust(box_width) + "║")
+    print("║" + "   │ Voting process?    │ You can...│ 1  │".ljust(box_width) + "║")
+    print("║" + "   │ Get NID card       │ Apply at..│ 2  │".ljust(box_width) + "║")
+    print("║" + "   └────────────────────┴───────────┴────┘".ljust(box_width) + "║")
+    print("║" + " " * box_width + "║")
+    print("╚" + "═" * box_width + "╝")
+    print()
+
+
 def main():
     """Example usage of QueryTagProcessor."""
     import argparse
+    
+    # Print info box when program runs
+    print_info_box()
     
     parser = argparse.ArgumentParser(description='Process queries and generate tags.')
     parser.add_argument('input_csv', help='Path to input CSV file with queries, answers, and IDs')
