@@ -2,6 +2,7 @@
 """
 Query Tag Processor: Generate tags for queries and split into separate CSV files.
 Uses existing ID column to group similar queries and generates meaningful tags via OpenAI.
+Then generates paraphrased questions and merges results.
 """
 
 import csv
@@ -10,6 +11,10 @@ from pathlib import Path
 from collections import defaultdict
 from typing import Dict, List, Tuple, Optional
 from openai import OpenAI
+
+# Import paraphrase generation and merge functions
+from generate_paraphrases import run_paraphrase_generation
+from merge_results import run_merge
 
 
 class QueryTagProcessor:
@@ -246,7 +251,10 @@ Tag:"""
     
     def process(self, csv_path: str, output_dir: str = ".", 
                 query_column: str = 'query', answer_column: str = 'answer',
-                id_column: str = 'id') -> Tuple[str, str]:
+                id_column: str = 'id', 
+                run_paraphrase: bool = False,
+                test_mode: bool = False,
+                test_tag_count: int = 1) -> Tuple[str, str]:
         """
         Convenience method to run the full pipeline.
         
@@ -256,13 +264,89 @@ Tag:"""
             query_column: Name of the query column in input CSV.
             answer_column: Name of the answer column in input CSV.
             id_column: Name of the ID column in input CSV (groups similar queries).
+            run_paraphrase: If True, also run paraphrase generation and merge.
+            test_mode: If True, only process first N tags for paraphrasing.
+            test_tag_count: Number of tags to process in test mode.
             
         Returns:
             Tuple of (queries_tags_path, tags_answers_path).
         """
         self.load_csv(csv_path, query_column, answer_column, id_column)
         self.generate_tags()
-        return self.split_to_csv_files(output_dir)
+        queries_tags_path, tags_answers_path = self.split_to_csv_files(output_dir)
+        
+        # Optionally run paraphrase generation and merge
+        if run_paraphrase:
+            self.run_full_pipeline(queries_tags_path, tags_answers_path, output_dir, 
+                                   test_mode, test_tag_count)
+        
+        return queries_tags_path, tags_answers_path
+    
+    def run_full_pipeline(self, queries_tags_path: str, tags_answers_path: str, 
+                          output_dir: str, test_mode: bool = False, 
+                          test_tag_count: int = 1) -> Optional[str]:
+        """
+        Run paraphrase generation and merge after tag generation.
+        
+        Args:
+            queries_tags_path: Path to queries_tags.csv (query, tag columns)
+            tags_answers_path: Path to tags_answers.csv (tag, answer columns)
+            output_dir: Base output directory
+            test_mode: If True, only process first N tags
+            test_tag_count: Number of tags to process in test mode
+            
+        Returns:
+            Path to the final merged dataset, or None if failed.
+        """
+        print("\n" + "="*80)
+        print("🚀 STARTING PARAPHRASE GENERATION PIPELINE")
+        print("="*80)
+        
+        # Create paraphrase output directory
+        paraphrase_output_dir = os.path.join(output_dir, "paraphrased_output")
+        os.makedirs(paraphrase_output_dir, exist_ok=True)
+        
+        print(f"\n📂 Input files:")
+        print(f"   - Questions/Tags: {queries_tags_path}")
+        print(f"   - Tags/Answers:   {tags_answers_path}")
+        print(f"   - Output Dir:     {paraphrase_output_dir}")
+        
+        # Run paraphrase generation
+        print("\n" + "-"*80)
+        print("📝 Step 1: Generating paraphrased questions...")
+        print("-"*80)
+        
+        success, failed, skipped = run_paraphrase_generation(
+            examples_file=queries_tags_path,
+            answers_file=tags_answers_path,
+            output_dir=paraphrase_output_dir,
+            test_mode=test_mode,
+            test_tag_count=test_tag_count
+        )
+        
+        print(f"\n✓ Paraphrase generation complete:")
+        print(f"   - Success: {success}")
+        print(f"   - Failed:  {failed}")
+        print(f"   - Skipped: {skipped}")
+        
+        # Run merge
+        print("\n" + "-"*80)
+        print("🔗 Step 2: Merging all generated files...")
+        print("-"*80)
+        
+        individual_tags_dir = os.path.join(paraphrase_output_dir, "individual_tags")
+        merged_file = run_merge(input_dir=individual_tags_dir)
+        
+        if merged_file:
+            print(f"\n✓ Final merged dataset: {merged_file}")
+        else:
+            print("\n✗ Merge failed - no files to merge")
+        
+        print("\n" + "="*80)
+        print("🎉 PIPELINE COMPLETE!")
+        print("="*80)
+        
+        return merged_file
 
 
 def print_info_box():
@@ -311,6 +395,12 @@ def main():
     parser.add_argument('--query-column', '-q', default='query', help='Name of query column')
     parser.add_argument('--answer-column', '-a', default='answer', help='Name of answer column')
     parser.add_argument('--id-column', '-i', default='id', help='Name of ID column (groups similar queries)')
+    parser.add_argument('--generate-paraphrases', '-g', action='store_true', 
+                        help='Also run paraphrase generation and merge after tagging')
+    parser.add_argument('--test', '-t', action='store_true',
+                        help='Test mode: only process first N tags for paraphrasing')
+    parser.add_argument('--test-count', '-n', type=int, default=1,
+                        help='Number of tags to process in test mode (default: 1)')
     
     args = parser.parse_args()
     
@@ -320,12 +410,18 @@ def main():
         output_dir=args.output_dir,
         query_column=args.query_column,
         answer_column=args.answer_column,
-        id_column=args.id_column
+        id_column=args.id_column,
+        run_paraphrase=args.generate_paraphrases,
+        test_mode=args.test,
+        test_tag_count=args.test_count
     )
     
     print(f"\nOutput files:")
     print(f"  - {queries_tags_path}")
     print(f"  - {tags_answers_path}")
+    
+    if args.generate_paraphrases:
+        print(f"\n📁 Paraphrased output available in: {args.output_dir}/paraphrased_output/")
 
 
 if __name__ == "__main__":

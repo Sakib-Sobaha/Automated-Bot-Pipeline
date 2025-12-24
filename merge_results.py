@@ -8,7 +8,7 @@ import os
 from pathlib import Path
 from datetime import datetime
 
-# Configuration
+# Default Configuration (can be overridden by run_merge)
 INPUT_DIR = "paraphrased_output_additional/individual_tags"
 # Output to root directory with today's date in filename
 today = datetime.now().strftime("%Y-%m-%d")
@@ -112,30 +112,51 @@ def validate_merged_file(output_file, expected_count):
 
     print("\nValidation complete!")
 
-def main():
-    """Main merge function."""
+def run_merge(input_dir: str, output_file: str = None) -> str:
+    """
+    Run the merge process with custom file paths.
+    
+    Args:
+        input_dir: Directory containing individual tag CSV files
+        output_file: Path for the merged output file. If None, uses default naming.
+        
+    Returns:
+        Path to the merged output file
+    """
+    if output_file is None:
+        today = datetime.now().strftime("%Y-%m-%d")
+        output_file = os.path.join(os.path.dirname(input_dir), f"merged_dataset_{today}.csv")
+    
     print("="*80)
     print("Starting merge process")
     print("="*80)
 
     # Get all CSV files
-    csv_files = get_sorted_csv_files(INPUT_DIR)
+    csv_files = get_sorted_csv_files(input_dir)
 
     if not csv_files:
-        print(f"ERROR: No CSV files found in {INPUT_DIR}")
-        return
+        print(f"ERROR: No CSV files found in {input_dir}")
+        return None
 
     print(f"Found {len(csv_files)} CSV files to merge")
 
     # Merge files
-    merged_count = merge_csv_files(csv_files, OUTPUT_FILE)
+    merged_count = merge_csv_files(csv_files, output_file)
 
     # Validate
-    validate_merged_file(OUTPUT_FILE, merged_count)
+    validate_merged_file(output_file, merged_count)
 
     print("\n" + "="*80)
     print("Merge complete!")
     print("="*80)
+    
+    return output_file
+
+
+def main():
+    """Main merge function (for standalone execution)."""
+    run_merge(INPUT_DIR, OUTPUT_FILE)
+
 
 if __name__ == "__main__":
     main()

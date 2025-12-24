@@ -13,7 +13,7 @@ from pathlib import Path
 from collections import defaultdict
 from openai import OpenAI
 
-# Configuration
+# Default Configuration (can be overridden by run_paraphrase_generation)
 EXAMPLES_FILE = "ec_missing_tag_question.csv"  # Source for example questions and unique tags
 ANSWERS_FILE = "ec_missing_tag_answer.csv"      # Lookup for tag->answer mapping
 OUTPUT_DIR = "paraphrased_output_missing/individual_tags"
@@ -23,18 +23,24 @@ PROGRESS_FILE = "paraphrased_output_missing/progress.txt"
 TEST_MODE = len(sys.argv) > 1 and sys.argv[1] == "--test"
 TEST_TAG_COUNT = 1
 
-# Initialize OpenAI client
-try:
-    client = OpenAI()
-    # Check if API key is set
-    if not os.environ.get("OPENAI_API_KEY"):
-        print("ERROR: OPENAI_API_KEY environment variable is not set!")
-        print("Please set your OpenAI API key:")
-        print("  export OPENAI_API_KEY='your-api-key-here'")
-        sys.exit(1)
-except Exception as e:
-    print(f"ERROR: Failed to initialize OpenAI client: {e}")
-    sys.exit(1)
+# Global OpenAI client (initialized lazily)
+client = None
+
+def init_openai_client():
+    """Initialize OpenAI client if not already initialized."""
+    global client
+    if client is None:
+        try:
+            client = OpenAI()
+            if not os.environ.get("OPENAI_API_KEY"):
+                print("ERROR: OPENAI_API_KEY environment variable is not set!")
+                print("Please set your OpenAI API key:")
+                print("  export OPENAI_API_KEY='your-api-key-here'")
+                return False
+        except Exception as e:
+            print(f"ERROR: Failed to initialize OpenAI client: {e}")
+            return False
+    return True
 
 def get_unique_tags_from_questions(questions_file):
     """Get all unique tags from question_tag.csv, sorted alphabetically (case-insensitive)."""
@@ -233,15 +239,41 @@ def save_individual_csv(index, tag_name, generated_questions):
 
     log_message(f"Saved: {filename} (200 questions generated)")
 
-def main():
-    """Main processing function."""
+def run_paraphrase_generation(examples_file: str, answers_file: str, output_dir: str, 
+                               test_mode: bool = False, test_tag_count: int = 1):
+    """
+    Run the paraphrase generation pipeline with custom file paths.
+    
+    Args:
+        examples_file: Path to CSV with queries and tags (query, tag columns)
+        answers_file: Path to CSV with tags and answers (tag, answer columns)
+        output_dir: Directory to save individual tag CSV files
+        test_mode: If True, only process first N tags
+        test_tag_count: Number of tags to process in test mode
+        
+    Returns:
+        Tuple of (success_count, failure_count, skipped_count)
+    """
+    global EXAMPLES_FILE, ANSWERS_FILE, OUTPUT_DIR, LOG_FILE, PROGRESS_FILE
+    
+    # Update global configuration
+    EXAMPLES_FILE = examples_file
+    ANSWERS_FILE = answers_file
+    OUTPUT_DIR = os.path.join(output_dir, "individual_tags")
+    LOG_FILE = os.path.join(output_dir, "processing_log.txt")
+    PROGRESS_FILE = os.path.join(output_dir, "progress.txt")
+    
+    # Initialize OpenAI client
+    if not init_openai_client():
+        return (0, 0, 0)
+    
     # Ensure output directories exist
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 
     log_message("="*80)
-    if TEST_MODE:
-        log_message(f"Starting question generation process [TEST MODE - {TEST_TAG_COUNT} tags]")
+    if test_mode:
+        log_message(f"Starting question generation process [TEST MODE - {test_tag_count} tags]")
     else:
         log_message("Starting question generation process [FULL MODE]")
     log_message("="*80)
@@ -261,8 +293,8 @@ def main():
     log_message(f"Loaded answers for {len(tag_to_answer)} tags")
 
     # Limit tags in test mode
-    if TEST_MODE:
-        unique_tags = unique_tags[:TEST_TAG_COUNT]
+    if test_mode:
+        unique_tags = unique_tags[:test_tag_count]
         log_message(f"Test mode: Processing only {len(unique_tags)} tags")
     else:
         log_message(f"Processing {len(unique_tags)} tags")
@@ -355,6 +387,24 @@ def main():
     log_message(f"Skipped (no examples): {skipped_count}")
     log_message(f"Failed (API errors): {failure_count}")
     log_message("="*80)
+    
+    return (success_count, failure_count, skipped_count)
+
+
+def main():
+    """Main processing function (for standalone execution)."""
+    # Initialize client at startup for standalone mode
+    if not init_openai_client():
+        sys.exit(1)
+    
+    run_paraphrase_generation(
+        examples_file=EXAMPLES_FILE,
+        answers_file=ANSWERS_FILE,
+        output_dir=os.path.dirname(OUTPUT_DIR),
+        test_mode=TEST_MODE,
+        test_tag_count=TEST_TAG_COUNT
+    )
+
 
 if __name__ == "__main__":
     main()
