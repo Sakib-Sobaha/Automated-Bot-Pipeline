@@ -1,0 +1,721 @@
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                    📊 TAG PREDICTION ANALYSIS                                   ║
+╠════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  Generated: 2026-01-29 16:43:40                                                                ║
+║  Sorted by: Accuracy (lowest to highest)                                                       ║
+║  Total predictions: 8720 | Right: 8235 | Wrong: 485 | Overall Accuracy: 94.44%                 ║
+╠════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  #   │                   Tag Name                    │  Right   │  Wrong   │  Total   │ Accuracy  ║
+╠════════════════════════════════════════════════════════════════════════════════════════════════╣
+║    1 │ nid_missing_fingerprint_sim_issue_01          │        5 │       15 │       20 │   25.00% ✗ ║
+║    2 │ card_correction_request_failed_query_regard.. │        7 │       13 │       20 │   35.00% ✗ ║
+║    3 │ new_voter_online_what_documents_to_submit     │        9 │       11 │       20 │   45.00% ✗ ║
+║    4 │ tracking_status_meaning                       │        9 │       11 │       20 │   45.00% ✗ ║
+║    5 │ vote_tracking_definition                      │        9 │       11 │       20 │   45.00% ✗ ║
+║    6 │ nid_afis_04                                   │       10 │       10 │       20 │   50.00% ✗ ║
+║    7 │ smart_card_fee                                │       10 │       10 │       20 │   50.00% ✗ ║
+║    8 │ nid_afis_01                                   │       11 │        9 │       20 │   55.00% ✗ ║
+║    9 │ help_center_contents                          │       12 │        8 │       20 │   60.00% ✗ ║
+║   10 │ nid_probashi_registration_04                  │       12 │        8 │       20 │   60.00% ✗ ║
+║   11 │ age_and_dob_correction                        │       13 │        7 │       20 │   65.00% ✗ ║
+║   12 │ card_damaged_how_to_get_new_card              │       13 │        7 │       20 │   65.00% ✗ ║
+║   13 │ new_voter_apply_online_what_documents_needed  │       13 │        7 │       20 │   65.00% ✗ ║
+║   14 │ nid_probashi_smart_card_03                    │       13 │        7 │       20 │   65.00% ✗ ║
+║   15 │ nid_reissue_07                                │       13 │        7 │       20 │   65.00% ✗ ║
+║   16 │ present_address_change_procedure              │       13 │        7 │       20 │   65.00% ✗ ║
+║   17 │ smart_card_lost_how_to_get_new_one_again      │       13 │        7 │       20 │   65.00% ✗ ║
+║   18 │ card_correction_request_failed_query_regard.. │       14 │        6 │       20 │   70.00% ~ ║
+║   19 │ card_information_correction                   │       14 │        6 │       20 │   70.00% ~ ║
+║   20 │ card_lost_and_damaged_cost                    │       14 │        6 │       20 │   70.00% ~ ║
+║   21 │ correction_application_current_status         │       14 │        6 │       20 │   70.00% ~ ║
+║   22 │ forgot_password_flow                          │       14 │        6 │       20 │   70.00% ~ ║
+║   23 │ new_nid_card_age                              │       14 │        6 │       20 │   70.00% ~ ║
+║   24 │ nid_probashi_smart_card_06                    │       14 │        6 │       20 │   70.00% ~ ║
+║   25 │ notification_screen_info                      │       14 │        6 │       20 │   70.00% ~ ║
+║   26 │ post_registration_password_reset              │       14 │        6 │       20 │   70.00% ~ ║
+║   27 │ voter_migration_done_now_what_to_do_for_rei.. │       14 │        6 │       20 │   70.00% ~ ║
+║   28 │ card_lost_no_info_how_to_get_new              │       15 │        5 │       20 │   75.00% ~ ║
+║   29 │ correction_application_rejected_need_new_fee  │       15 │        5 │       20 │   75.00% ~ ║
+║   30 │ fingerprint_error_info_not_found              │       15 │        5 │       20 │   75.00% ~ ║
+║   31 │ login_after_registration                      │       15 │        5 │       20 │   75.00% ~ ║
+║   32 │ nid_biometric_update_not_working_01           │       15 │        5 │       20 │   75.00% ~ ║
+║   33 │ nid_registration_age                          │       15 │        5 │       20 │   75.00% ~ ║
+║   34 │ registration_start_button                     │       15 │        5 │       20 │   75.00% ~ ║
+║   35 │ app_requirements_internet_gps_vpn             │       16 │        4 │       20 │   80.00% ~ ║
+║   36 │ bkash_mfs_payment_process                     │       16 │        4 │       20 │   80.00% ~ ║
+║   37 │ card_lost_new_card_fee                        │       16 │        4 │       20 │   80.00% ~ ║
+║   38 │ face_verification_no_next_option              │       16 │        4 │       20 │   80.00% ~ ║
+║   39 │ foreign_address_entry_tips                    │       16 │        4 │       20 │   80.00% ~ ║
+║   40 │ husband_name_previous_card                    │       16 │        4 │       20 │   80.00% ~ ║
+║   41 │ nid_fee_wrong_nid_refund_01                   │       16 │        4 │       20 │   80.00% ~ ║
+║   42 │ online_card_correction                        │       16 │        4 │       20 │   80.00% ~ ║
+║   43 │ password_character_requirements               │       16 │        4 │       20 │   80.00% ~ ║
+║   44 │ selfie_capture_guidelines                     │       16 │        4 │       20 │   80.00% ~ ║
+║   45 │ smart_card_collection_fees                    │       16 │        4 │       20 │   80.00% ~ ║
+║   46 │ when_to_seek_help                             │       16 │        4 │       20 │   80.00% ~ ║
+║   47 │ correction_application_status                 │       17 │        3 │       20 │   85.00% ~ ║
+║   48 │ double_voter_registration_issue               │       17 │        3 │       20 │   85.00% ~ ║
+║   49 │ login_safety_precautions                      │       17 │        3 │       20 │   85.00% ~ ║
+║   50 │ new_voter_application_cancelled               │       17 │        3 │       20 │   85.00% ~ ║
+║   51 │ nid_biometric_update_status_01                │       17 │        3 │       20 │   85.00% ~ ║
+║   52 │ nid_correction_category_approver_07           │       17 │        3 │       20 │   85.00% ~ ║
+║   53 │ nid_probashi_registration_02                  │       17 │        3 │       20 │   85.00% ~ ║
+║   54 │ nid_wallet_download_iphone                    │       17 │        3 │       20 │   85.00% ~ ║
+║   55 │ not_getting_smart_card_though_newer_voter_g.. │       17 │        3 │       20 │   85.00% ~ ║
+║   56 │ notification_menu_contents                    │       17 │        3 │       20 │   85.00% ~ ║
+║   57 │ password_requirements                         │       17 │        3 │       20 │   85.00% ~ ║
+║   58 │ photo_sms_but_not_in_upzila_other_when        │       17 │        3 │       20 │   85.00% ~ ║
+║   59 │ qr_scan_mandatory                             │       17 │        3 │       20 │   85.00% ~ ║
+║   60 │ voter_slip_lost_how_to_get_nid                │       17 │        3 │       20 │   85.00% ~ ║
+║   61 │ wish_to_create_nid_smart_card_new             │       17 │        3 │       20 │   85.00% ~ ║
+║   62 │ wrongly_dead_declared                         │       17 │        3 │       20 │   85.00% ~ ║
+║   63 │ account_locked_retrials                       │       18 │        2 │       20 │   90.00% ✓ ║
+║   64 │ address_change_card_download_process          │       18 │        2 │       20 │   90.00% ✓ ║
+║   65 │ card_correction_request_canceled_by_consume.. │       18 │        2 │       20 │   90.00% ✓ ║
+║   66 │ correction_fee_payment                        │       18 │        2 │       20 │   90.00% ✓ ║
+║   67 │ correction_slip_lost_can_get_card             │       18 │        2 │       20 │   90.00% ✓ ║
+║   68 │ foreign_resident_card_registration_query_co.. │       18 │        2 │       20 │   90.00% ✓ ║
+║   69 │ help_center_access                            │       18 │        2 │       20 │   90.00% ✓ ║
+║   70 │ help_service_key_points                       │       18 │        2 │       20 │   90.00% ✓ ║
+║   71 │ liveness_check_steps                          │       18 │        2 │       20 │   90.00% ✓ ║
+║   72 │ nid_adjudication_pending                      │       18 │        2 │       20 │   90.00% ✓ ║
+║   73 │ nid_correction_category_approver_03           │       18 │        2 │       20 │   90.00% ✓ ║
+║   74 │ nid_correction_category_approver_04           │       18 │        2 │       20 │   90.00% ✓ ║
+║   75 │ nid_correction_category_approver_05           │       18 │        2 │       20 │   90.00% ✓ ║
+║   76 │ nid_correction_online_06                      │       18 │        2 │       20 │   90.00% ✓ ║
+║   77 │ nid_fee_04                                    │       18 │        2 │       20 │   90.00% ✓ ║
+║   78 │ nid_fee_06                                    │       18 │        2 │       20 │   90.00% ✓ ║
+║   79 │ nid_fee_09                                    │       18 │        2 │       20 │   90.00% ✓ ║
+║   80 │ nid_fingerprint_mismatch_sim_issue_01         │       18 │        2 │       20 │   90.00% ✓ ║
+║   81 │ nid_information_misentry_correction_procedure │       18 │        2 │       20 │   90.00% ✓ ║
+║   82 │ nid_misc_04                                   │       18 │        2 │       20 │   90.00% ✓ ║
+║   83 │ no_husband_name_in_smart_card                 │       18 │        2 │       20 │   90.00% ✓ ║
+║   84 │ otp_entry_screen                              │       18 │        2 │       20 │   90.00% ✓ ║
+║   85 │ parents_or_spouse_death_related_documents_t.. │       18 │        2 │       20 │   90.00% ✓ ║
+║   86 │ photo_done_years_ago_but_no_card              │       18 │        2 │       20 │   90.00% ✓ ║
+║   87 │ picture_done_but_lost_or_no_sms_slip          │       18 │        2 │       20 │   90.00% ✓ ║
+║   88 │ post_login_page_not_loading                   │       18 │        2 │       20 │   90.00% ✓ ║
+║   89 │ pre_use_privacy_policy_read                   │       18 │        2 │       20 │   90.00% ✓ ║
+║   90 │ security_check_failed                         │       18 │        2 │       20 │   90.00% ✓ ║
+║   91 │ smart_card_lost_reissue                       │       18 │        2 │       20 │   90.00% ✓ ║
+║   92 │ smart_card_status                             │       18 │        2 │       20 │   90.00% ✓ ║
+║   93 │ voter_card_damaged                            │       18 │        2 │       20 │   90.00% ✓ ║
+║   94 │ voting_precautions                            │       18 │        2 │       20 │   90.00% ✓ ║
+║   95 │ wrong_otp_registration                        │       18 │        2 │       20 │   90.00% ✓ ║
+║   96 │ account_locked                                │       19 │        1 │       20 │   95.00% ✓ ║
+║   97 │ address_change_sms_to_mobile_how_many_days_.. │       19 │        1 │       20 │   95.00% ✓ ║
+║   98 │ after_success_login_button                    │       19 │        1 │       20 │   95.00% ✓ ║
+║   99 │ all_documents_correct_but_application_rejec.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  100 │ auto_logout_inactivity                        │       19 │        1 │       20 │   95.00% ✓ ║
+║  101 │ ballot_packing_instructions                   │       19 │        1 │       20 │   95.00% ✓ ║
+║  102 │ ballot_tracking_definition                    │       19 │        1 │       20 │   95.00% ✓ ║
+║  103 │ card_avail_after_address_change               │       19 │        1 │       20 │   95.00% ✓ ║
+║  104 │ data_security_assurance                       │       19 │        1 │       20 │   95.00% ✓ ║
+║  105 │ foreign_resident_card_picture_done__inquery.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  106 │ form_number_not_working                       │       19 │        1 │       20 │   95.00% ✓ ║
+║  107 │ help_center_definition                        │       19 │        1 │       20 │   95.00% ✓ ║
+║  108 │ help_contact_location                         │       19 │        1 │       20 │   95.00% ✓ ║
+║  109 │ how_to_apply_for_correction_in_online_portal  │       19 │        1 │       20 │   95.00% ✓ ║
+║  110 │ incorrect_info_restart                        │       19 │        1 │       20 │   95.00% ✓ ║
+║  111 │ location_service_required_reason              │       19 │        1 │       20 │   95.00% ✓ ║
+║  112 │ mobile_number_entry                           │       19 │        1 │       20 │   95.00% ✓ ║
+║  113 │ name_correction_in_nid_card                   │       19 │        1 │       20 │   95.00% ✓ ║
+║  114 │ new_voter_application_not_submitted_to_upaz.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  115 │ new_voter_but_card_rejected                   │       19 │        1 │       20 │   95.00% ✓ ║
+║  116 │ new_voter_card_getting_time                   │       19 │        1 │       20 │   95.00% ✓ ║
+║  117 │ new_voter_got_normal_card_when_get_smart_card │       19 │        1 │       20 │   95.00% ✓ ║
+║  118 │ new_voter_registered_where_To_submit_the_do.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  119 │ nid_address_update_08                         │       19 │        1 │       20 │   95.00% ✓ ║
+║  120 │ nid_correction_categories_01                  │       19 │        1 │       20 │   95.00% ✓ ║
+║  121 │ nid_correction_category_approver_01           │       19 │        1 │       20 │   95.00% ✓ ║
+║  122 │ nid_correction_category_approver_02           │       19 │        1 │       20 │   95.00% ✓ ║
+║  123 │ nid_correction_category_approver_06           │       19 │        1 │       20 │   95.00% ✓ ║
+║  124 │ nid_correction_online_02                      │       19 │        1 │       20 │   95.00% ✓ ║
+║  125 │ nid_correction_online_08                      │       19 │        1 │       20 │   95.00% ✓ ║
+║  126 │ nid_fee_07                                    │       19 │        1 │       20 │   95.00% ✓ ║
+║  127 │ nid_misc_07                                   │       19 │        1 │       20 │   95.00% ✓ ║
+║  128 │ nid_new_registration_04                       │       19 │        1 │       20 │   95.00% ✓ ║
+║  129 │ nid_photo_guidelines                          │       19 │        1 │       20 │   95.00% ✓ ║
+║  130 │ nid_postal_vote_abroad_01                     │       19 │        1 │       20 │   95.00% ✓ ║
+║  131 │ nid_probashi_address_requirement_01           │       19 │        1 │       20 │   95.00% ✓ ║
+║  132 │ nid_probashi_eligibility_01                   │       19 │        1 │       20 │   95.00% ✓ ║
+║  133 │ nid_probashi_registration_03                  │       19 │        1 │       20 │   95.00% ✓ ║
+║  134 │ nid_probashi_smart_card_01                    │       19 │        1 │       20 │   95.00% ✓ ║
+║  135 │ nid_probashi_smart_card_08                    │       19 │        1 │       20 │   95.00% ✓ ║
+║  136 │ nid_reissue_01                                │       19 │        1 │       20 │   95.00% ✓ ║
+║  137 │ nid_reissue_03                                │       19 │        1 │       20 │   95.00% ✓ ║
+║  138 │ nid_required_for_registration                 │       19 │        1 │       20 │   95.00% ✓ ║
+║  139 │ nid_verification_failed                       │       19 │        1 │       20 │   95.00% ✓ ║
+║  140 │ nid_vote_without_card_01                      │       19 │        1 │       20 │   95.00% ✓ ║
+║  141 │ nid_voter_area_transfer_01                    │       19 │        1 │       20 │   95.00% ✓ ║
+║  142 │ nid_wallet_download                           │       19 │        1 │       20 │   95.00% ✓ ║
+║  143 │ no_android_phone                              │       19 │        1 │       20 │   95.00% ✓ ║
+║  144 │ online_application_pending                    │       19 │        1 │       20 │   95.00% ✓ ║
+║  145 │ online_apply                                  │       19 │        1 │       20 │   95.00% ✓ ║
+║  146 │ online_portal_registration                    │       19 │        1 │       20 │   95.00% ✓ ║
+║  147 │ parent_spouse_name_correct_or_add_document_.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  148 │ password_change_frequency                     │       19 │        1 │       20 │   95.00% ✓ ║
+║  149 │ password_reset_required_info                  │       19 │        1 │       20 │   95.00% ✓ ║
+║  150 │ password_sharing_warning                      │       19 │        1 │       20 │   95.00% ✓ ║
+║  151 │ photo_correction                              │       19 │        1 │       20 │   95.00% ✓ ║
+║  152 │ photo_signature_change_application_not_appr.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  153 │ post_submission_verification                  │       19 │        1 │       20 │   95.00% ✓ ║
+║  154 │ preparation_before_app_use                    │       19 │        1 │       20 │   95.00% ✓ ║
+║  155 │ previous_information_in_downloaded_card_aft.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  156 │ problem_help_suggestion                       │       19 │        1 │       20 │   95.00% ✓ ║
+║  157 │ qr_scan_instructions                          │       19 │        1 │       20 │   95.00% ✓ ║
+║  158 │ registration_start_country_select             │       19 │        1 │       20 │   95.00% ✓ ║
+║  159 │ reigister_as_new_voter_but_birth_registrati.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  160 │ relogin_credentials_required                  │       19 │        1 │       20 │   95.00% ✓ ║
+║  161 │ sem_app_info_08                               │       19 │        1 │       20 │   95.00% ✓ ║
+║  162 │ sem_app_info_09                               │       19 │        1 │       20 │   95.00% ✓ ║
+║  163 │ smart_card_distributed_in_my_area_but_my_ca.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  164 │ smart_card_printing_status_sms_how            │       19 │        1 │       20 │   95.00% ✓ ║
+║  165 │ verification_completion_notification          │       19 │        1 │       20 │   95.00% ✓ ║
+║  166 │ video_tutorial_why                            │       19 │        1 │       20 │   95.00% ✓ ║
+║  167 │ voter_halnagad_registration_not_done          │       19 │        1 │       20 │   95.00% ✓ ║
+║  168 │ wrong_information_in_online_application_wha.. │       19 │        1 │       20 │   95.00% ✓ ║
+║  169 │ accepted_nid_types                            │       20 │        0 │       20 │  100.00% ✓ ║
+║  170 │ account_locked_unlock_request                 │       20 │        0 │       20 │  100.00% ✓ ║
+║  171 │ address_cahgne_but_no_post_office_or_office.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  172 │ address_change_counselor_chairperson_signat.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  173 │ address_change_online_new                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  174 │ app_download_sources                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  175 │ app_language_change                           │       20 │        0 │       20 │  100.00% ✓ ║
+║  176 │ app_not_opening_troubleshoot                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  177 │ ballot_envelope_postage_free                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  178 │ ballot_envelope_submission                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  179 │ ballot_marking_instructions                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  180 │ ballot_packet_contents                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  181 │ ballot_tracking_button_activation             │       20 │        0 │       20 │  100.00% ✓ ║
+║  182 │ ballot_tracking_steps                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  183 │ birth_certificate_and_ssc_certificate_diffe.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  184 │ birth_certificate_number_correct_or_add_doc.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  185 │ birth_date_no_proof_model                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  186 │ birthplace_correction_new                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  187 │ blood_group_correction                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  188 │ call_center_bengali_support                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  189 │ camera_issue_registration                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  190 │ card_correction_fees                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  191 │ card_correction_fees_payment_reference_nid_.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  192 │ card_correction_one_information_maximum_limit │       20 │        0 │       20 │  100.00% ✓ ║
+║  193 │ card_reissue_fees                             │       20 │        0 │       20 │  100.00% ✓ ║
+║  194 │ cell_phone_number_correct_or_add_document_new │       20 │        0 │       20 │  100.00% ✓ ║
+║  195 │ condition_for_foreign_voter                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  196 │ correction_applied_but_no_category            │       20 │        0 │       20 │  100.00% ✓ ║
+║  197 │ correction_applied_more_correction_needed     │       20 │        0 │       20 │  100.00% ✓ ║
+║  198 │ correction_fee_submitted_but_balance_zero     │       20 │        0 │       20 │  100.00% ✓ ║
+║  199 │ correction_messages_but_no_update_in_card_n.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  200 │ dead_people_id_card_update                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  201 │ educational_qualification_correction          │       20 │        0 │       20 │  100.00% ✓ ║
+║  202 │ eight_hours_time_up                           │       20 │        0 │       20 │  100.00% ✓ ║
+║  203 │ email_optional                                │       20 │        0 │       20 │  100.00% ✓ ║
+║  204 │ faster_voter_registration                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  205 │ father_and_my_adress_different                │       20 │        0 │       20 │  100.00% ✓ ║
+║  206 │ finderprint_adjudication_pending              │       20 │        0 │       20 │  100.00% ✓ ║
+║  207 │ font_problem_in_new_voter_registration_form   │       20 │        0 │       20 │  100.00% ✓ ║
+║  208 │ foreign_address_fields                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  209 │ foreign_resident_action_after_biometrics_new  │       20 │        0 │       20 │  100.00% ✓ ║
+║  210 │ foreign_resident_card_collection              │       20 │        0 │       20 │  100.00% ✓ ║
+║  211 │ foreign_resident_card_picture_done_not_inqu.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  212 │ foreign_resident_card_registration_process    │       20 │        0 │       20 │  100.00% ✓ ║
+║  213 │ foreign_resident_card_registration_rejected   │       20 │        0 │       20 │  100.00% ✓ ║
+║  214 │ foreign_resident_card_registration_required.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  215 │ foreign_resident_multiple_registration_new    │       20 │        0 │       20 │  100.00% ✓ ║
+║  216 │ foreign_resident_nid_adjudication_pending     │       20 │        0 │       20 │  100.00% ✓ ║
+║  217 │ foreign_resident_passport_expaired_card_reg.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  218 │ home_screen_usage                             │       20 │        0 │       20 │  100.00% ✓ ║
+║  219 │ how_many_wife_name_can_be_added_in_nid_card   │       20 │        0 │       20 │  100.00% ✓ ║
+║  220 │ how_to_complain_not_getting_help_from_elect.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  221 │ husband_talak_name_remove                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  222 │ information_correct_but_account_locked        │       20 │        0 │       20 │  100.00% ✓ ║
+║  223 │ instant_card_correction_fee                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  224 │ instruction_following_tips                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  225 │ liveness_check_avoid                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  226 │ liveness_check_purpose                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  227 │ login_after_logout                            │       20 │        0 │       20 │  100.00% ✓ ║
+║  228 │ login_credentials_required                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  229 │ login_page_not_opening                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  230 │ login_using_old_id_password                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  231 │ logout_available                              │       20 │        0 │       20 │  100.00% ✓ ║
+║  232 │ logout_steps                                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  233 │ multiple_marks_invalid_vote                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  234 │ necessary_documents_to_modify_voter_area      │       20 │        0 │       20 │  100.00% ✓ ║
+║  235 │ new_card_got_old_card_found_what_to_do        │       20 │        0 │       20 │  100.00% ✓ ║
+║  236 │ new_voter_can_not_download_card_with_form_n.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  237 │ new_voter_card_not_taken_has_form_no_can_no.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  238 │ new_voter_fees                                │       20 │        0 │       20 │  100.00% ✓ ║
+║  239 │ new_voter_how_to_get_card                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  240 │ new_voter_identifier_who                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  241 │ new_voter_no_messages_from_upzila_or_thana    │       20 │        0 │       20 │  100.00% ✓ ║
+║  242 │ new_voter_pre_condition                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  243 │ new_voter_smart_card_how_to_get               │       20 │        0 │       20 │  100.00% ✓ ║
+║  244 │ nid_address_update_01                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  245 │ nid_address_update_02                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  246 │ nid_address_update_03                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  247 │ nid_address_update_04                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  248 │ nid_address_update_05                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  249 │ nid_address_update_06                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  250 │ nid_address_update_07                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  251 │ nid_address_update_09                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  252 │ nid_address_update_10                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  253 │ nid_address_update_11                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  254 │ nid_address_update_12                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  255 │ nid_address_update_13                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  256 │ nid_afis_02                                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  257 │ nid_afis_03                                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  258 │ nid_appeal_disposal_time_01                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  259 │ nid_application_rejection_notice_time_01      │       20 │        0 │       20 │  100.00% ✓ ║
+║  260 │ nid_application_verification_time_01          │       20 │        0 │       20 │  100.00% ✓ ║
+║  261 │ nid_biometric_update_status_02                │       20 │        0 │       20 │  100.00% ✓ ║
+║  262 │ nid_biometric_update_status_03                │       20 │        0 │       20 │  100.00% ✓ ║
+║  263 │ nid_bribery_complaint_01                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  264 │ nid_card_validity_period_01                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  265 │ nid_correction_online_01                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  266 │ nid_correction_online_03                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  267 │ nid_correction_online_04                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  268 │ nid_correction_online_05                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  269 │ nid_correction_online_07                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  270 │ nid_data_supply_fee_01                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  271 │ nid_dual_citizenship_01                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  272 │ nid_dual_citizenship_02                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  273 │ nid_dual_citizenship_03                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  274 │ nid_fee_01                                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  275 │ nid_fee_02                                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  276 │ nid_fee_03                                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  277 │ nid_fee_05                                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  278 │ nid_fee_08                                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  279 │ nid_fee_payment_channels_01                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  280 │ nid_fee_usage_status_01                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  281 │ nid_match_found_verification_failed_how_to_.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  282 │ nid_misc_01                                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  283 │ nid_misc_02                                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  284 │ nid_misc_03                                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  285 │ nid_misc_05                                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  286 │ nid_misc_06                                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  287 │ nid_missing_finger_tax_issue_01               │       20 │        0 │       20 │  100.00% ✓ ║
+║  288 │ nid_new_registration_01                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  289 │ nid_new_registration_02                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  290 │ nid_new_registration_03                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  291 │ nid_new_registration_05                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  292 │ nid_new_registration_06                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  293 │ nid_new_registration_07                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  294 │ nid_probashi_application_rejected_01          │       20 │        0 │       20 │  100.00% ✓ ║
+║  295 │ nid_probashi_application_rejected_02          │       20 │        0 │       20 │  100.00% ✓ ║
+║  296 │ nid_probashi_approval_pending_01              │       20 │        0 │       20 │  100.00% ✓ ║
+║  297 │ nid_probashi_approval_pending_02              │       20 │        0 │       20 │  100.00% ✓ ║
+║  298 │ nid_probashi_biometric_status_01              │       20 │        0 │       20 │  100.00% ✓ ║
+║  299 │ nid_probashi_biometric_status_02              │       20 │        0 │       20 │  100.00% ✓ ║
+║  300 │ nid_probashi_biometric_status_03              │       20 │        0 │       20 │  100.00% ✓ ║
+║  301 │ nid_probashi_biometric_status_04              │       20 │        0 │       20 │  100.00% ✓ ║
+║  302 │ nid_probashi_biometric_status_05              │       20 │        0 │       20 │  100.00% ✓ ║
+║  303 │ nid_probashi_correction_abroad_01             │       20 │        0 │       20 │  100.00% ✓ ║
+║  304 │ nid_probashi_registration_01                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  305 │ nid_probashi_registration_05                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  306 │ nid_probashi_registration_06                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  307 │ nid_probashi_registration_07                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  308 │ nid_probashi_service_countries_01             │       20 │        0 │       20 │  100.00% ✓ ║
+║  309 │ nid_probashi_smart_card_02                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  310 │ nid_probashi_smart_card_04                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  311 │ nid_probashi_smart_card_05                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  312 │ nid_probashi_smart_card_07                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  313 │ nid_probashi_smart_card_09                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  314 │ nid_probashi_smart_card_10                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  315 │ nid_probashi_voter_list_01                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  316 │ nid_reissue_02                                │       20 │        0 │       20 │  100.00% ✓ ║
+║  317 │ nid_reissue_04                                │       20 │        0 │       20 │  100.00% ✓ ║
+║  318 │ nid_reissue_05                                │       20 │        0 │       20 │  100.00% ✓ ║
+║  319 │ nid_reissue_06                                │       20 │        0 │       20 │  100.00% ✓ ║
+║  320 │ nid_reissue_08                                │       20 │        0 │       20 │  100.00% ✓ ║
+║  321 │ nid_reissue_09                                │       20 │        0 │       20 │  100.00% ✓ ║
+║  322 │ nid_reissue_approvers_01                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  323 │ nid_religion_change_documents_01              │       20 │        0 │       20 │  100.00% ✓ ║
+║  324 │ nid_required_for_postal_vote                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  325 │ nid_reregistration_fee_01                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  326 │ nid_reregistration_timing_01                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  327 │ nid_smart_card_print_status_01                │       20 │        0 │       20 │  100.00% ✓ ║
+║  328 │ nid_verification_definition                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  329 │ nid_vote_center_change_01                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  330 │ nid_voter_area_transfer_02                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  331 │ nid_voter_area_transfer_03                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  332 │ nid_voter_area_transfer_04                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  333 │ nid_voter_area_transfer_05                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  334 │ nid_voter_area_transfer_06                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  335 │ nid_voter_area_transfer_07                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  336 │ nid_wallet_download_alternative               │       20 │        0 │       20 │  100.00% ✓ ║
+║  337 │ no_download_option_after_correction           │       20 │        0 │       20 │  100.00% ✓ ║
+║  338 │ no_face_verification                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  339 │ no_otp_in_registration                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  340 │ no_own_house_in_voter_area                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  341 │ no_upzila_in_online_registration              │       20 │        0 │       20 │  100.00% ✓ ║
+║  342 │ no_upzila_in_permananet_address               │       20 │        0 │       20 │  100.00% ✓ ║
+║  343 │ nrb_application_status                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  344 │ old_birth_certificate                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  345 │ one_device_one_voter                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  346 │ one_mobile_number_how_many_time_registration  │       20 │        0 │       20 │  100.00% ✓ ║
+║  347 │ one_zero_five_upzila_office_contact           │       20 │        0 │       20 │  100.00% ✓ ║
+║  348 │ online_card_correction_application_done_now.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  349 │ online_new_voter_registration                 │       20 │        0 │       20 │  100.00% ✓ ║
+║  350 │ online_no_apply                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  351 │ online_previously_registered                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  352 │ otp_delivery_time                             │       20 │        0 │       20 │  100.00% ✓ ║
+║  353 │ otp_length                                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  354 │ otp_not_received                              │       20 │        0 │       20 │  100.00% ✓ ║
+║  355 │ otp_send_button                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  356 │ parent_no_card_failed_to_be_voter             │       20 │        0 │       20 │  100.00% ✓ ║
+║  357 │ parents_name_correction_new                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  358 │ passport_info_required                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  359 │ passport_number_correct_or_add_document_new   │       20 │        0 │       20 │  100.00% ✓ ║
+║  360 │ passport_number_optional                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  361 │ password_change_process                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  362 │ password_min_length                           │       20 │        0 │       20 │  100.00% ✓ ║
+║  363 │ password_reset_time                           │       20 │        0 │       20 │  100.00% ✓ ║
+║  364 │ password_submit_success_page                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  365 │ permanent_address_change_fees                 │       20 │        0 │       20 │  100.00% ✓ ║
+║  366 │ permanent_address_change_process_duration     │       20 │        0 │       20 │  100.00% ✓ ║
+║  367 │ permanent_address_new                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  368 │ permanent_address_update_procedure            │       20 │        0 │       20 │  100.00% ✓ ║
+║  369 │ persent_address_correction_procedure          │       20 │        0 │       20 │  100.00% ✓ ║
+║  370 │ policy_menu_contents                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  371 │ post_ballot_vote_confirmation                 │       20 │        0 │       20 │  100.00% ✓ ║
+║  372 │ post_login_capabilities                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  373 │ post_qr_liveness_requirement                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  374 │ pre_voting_video_mandatory                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  375 │ present_address_change_process_duration       │       20 │        0 │       20 │  100.00% ✓ ║
+║  376 │ present_and_permanent_address_generic_new     │       20 │        0 │       20 │  100.00% ✓ ║
+║  377 │ privacy_policy_menu_location                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  378 │ process_requirements                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  379 │ profession_change                             │       20 │        0 │       20 │  100.00% ✓ ║
+║  380 │ profile_menu_contents                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  381 │ public_wifi_login_risk                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  382 │ qr_code_clarification                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  383 │ qr_scan_button_activation                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  384 │ receipt_lost_how_to_get_new_card              │       20 │        0 │       20 │  100.00% ✓ ║
+║  385 │ registration_steps_count                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  386 │ reissue_apply_why_pending_and_urgent_reissu.. │       20 │        0 │       20 │  100.00% ✓ ║
+║  387 │ reissue_supporting_document                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  388 │ rocket_mfs_payment_process                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  389 │ security_best_practices                       │       20 │        0 │       20 │  100.00% ✓ ║
+║  390 │ selfie_required_reason                        │       20 │        0 │       20 │  100.00% ✓ ║
+║  391 │ sem_app_info_01                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  392 │ sem_app_info_02                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  393 │ sem_app_info_03                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  394 │ sem_app_info_04                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  395 │ sem_app_info_05                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  396 │ sem_app_info_06                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  397 │ sem_app_info_07                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  398 │ sem_app_info_10                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  399 │ sem_app_info_11                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  400 │ sem_app_info_12                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  401 │ sem_app_info_13                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  402 │ sem_app_info_14                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  403 │ show_password                                 │       20 │        0 │       20 │  100.00% ✓ ║
+║  404 │ signature_correction                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  405 │ smart_card_collect_by_other                   │       20 │        0 │       20 │  100.00% ✓ ║
+║  406 │ smart_card_from_where                         │       20 │        0 │       20 │  100.00% ✓ ║
+║  407 │ smart_card_print_problem                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  408 │ smart_card_ready_sms                          │       20 │        0 │       20 │  100.00% ✓ ║
+║  409 │ smart_card_selected_but_get_pdf               │       20 │        0 │       20 │  100.00% ✓ ║
+║  410 │ sms_after_picture_how_many_days               │       20 │        0 │       20 │  100.00% ✓ ║
+║  411 │ spouse_name_correction_new                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  412 │ ssc_certificate_for_correction                │       20 │        0 │       20 │  100.00% ✓ ║
+║  413 │ strong_password_importance                    │       20 │        0 │       20 │  100.00% ✓ ║
+║  414 │ tin_number_correct_or_add_document            │       20 │        0 │       20 │  100.00% ✓ ║
+║  415 │ together_present_and_permanent_address_change │       20 │        0 │       20 │  100.00% ✓ ║
+║  416 │ underaged_card_holder_to_voter                │       20 │        0 │       20 │  100.00% ✓ ║
+║  417 │ unexpected_online_problem                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  418 │ updated_nid_after_correction                  │       20 │        0 │       20 │  100.00% ✓ ║
+║  419 │ utility_bill_not_available_for_address_proof  │       20 │        0 │       20 │  100.00% ✓ ║
+║  420 │ verification_in_progress_app_close            │       20 │        0 │       20 │  100.00% ✓ ║
+║  421 │ verification_in_progress_wait                 │       20 │        0 │       20 │  100.00% ✓ ║
+║  422 │ verification_time                             │       20 │        0 │       20 │  100.00% ✓ ║
+║  423 │ video_end_next_step                           │       20 │        0 │       20 │  100.00% ✓ ║
+║  424 │ voter_area_change                             │       20 │        0 │       20 │  100.00% ✓ ║
+║  425 │ voter_area_change_not_reflected               │       20 │        0 │       20 │  100.00% ✓ ║
+║  426 │ voter_area_change_ongoing                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  427 │ voter_area_change_online                      │       20 │        0 │       20 │  100.00% ✓ ║
+║  428 │ voter_area_query                              │       20 │        0 │       20 │  100.00% ✓ ║
+║  429 │ voter_slip_lost_how_to_get_new_card           │       20 │        0 │       20 │  100.00% ✓ ║
+║  430 │ vpn_not_allowed                               │       20 │        0 │       20 │  100.00% ✓ ║
+║  431 │ way_to_cancel_correction_application          │       20 │        0 │       20 │  100.00% ✓ ║
+║  432 │ weak_password_risk                            │       20 │        0 │       20 │  100.00% ✓ ║
+║  433 │ wrong_address_consequence                     │       20 │        0 │       20 │  100.00% ✓ ║
+║  434 │ wrong_info_penalty                            │       20 │        0 │       20 │  100.00% ✓ ║
+║  435 │ wrong_mobile_number_consequence               │       20 │        0 │       20 │  100.00% ✓ ║
+║  436 │ wrong_password_in_registration                │       20 │        0 │       20 │  100.00% ✓ ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝
+
+Legend: ✓ = ≥90% | ~ = 70-89% | ✗ = <70%
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                    🔀 MISMATCH MAPPINGS (expected_tag → predicted_tag, count)                   ║
+╠════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  #   │               Expected Tag               │          Predicted Tag (wrong)           │ Count  ║
+╠════════════════════════════════════════════════════════════════════════════════════════════════╣
+║    1 │ card_correction_request_failed_query_r.. │ correction_application_rejected_need_n.. │     13 ║
+║    2 │ smart_card_fee                           │ smart_card_collection_fees               │     10 ║
+║    3 │ vote_tracking_definition                 │ ballot_tracking_definition               │     10 ║
+║    4 │ nid_missing_fingerprint_sim_issue_01     │ nid_afis_04                              │      7 ║
+║    5 │ nid_probashi_registration_04             │ nid_registration_age                     │      7 ║
+║    6 │ new_nid_card_age                         │ nid_registration_age                     │      6 ║
+║    7 │ new_voter_apply_online_what_documents_.. │ new_voter_online_what_documents_to_sub.. │      6 ║
+║    8 │ nid_afis_01                              │ fingerprint_error_info_not_found         │      6 ║
+║    9 │ notification_screen_info                 │ notification_menu_contents               │      6 ║
+║   10 │ card_correction_request_failed_query_r.. │ card_correction_request_canceled_by_co.. │      5 ║
+║   11 │ forgot_password_flow                     │ post_registration_password_reset         │      5 ║
+║   12 │ help_center_contents                     │ help_center_definition                   │      5 ║
+║   13 │ nid_afis_04                              │ nid_missing_fingerprint_sim_issue_01     │      5 ║
+║   14 │ nid_missing_fingerprint_sim_issue_01     │ nid_fingerprint_mismatch_sim_issue_01    │      5 ║
+║   15 │ post_registration_password_reset         │ forgot_password_flow                     │      5 ║
+║   16 │ registration_start_button                │ registration_start_country_select        │      5 ║
+║   17 │ smart_card_lost_how_to_get_new_one_again │ smart_card_lost_reissue                  │      5 ║
+║   18 │ tracking_status_meaning                  │ ballot_tracking_steps                    │      5 ║
+║   19 │ voter_migration_done_now_what_to_do_fo.. │ card_avail_after_address_change          │      5 ║
+║   20 │ bkash_mfs_payment_process                │ correction_fee_payment                   │      4 ║
+║   21 │ correction_application_current_status    │ correction_application_status            │      4 ║
+║   22 │ face_verification_no_next_option         │ no_face_verification                     │      4 ║
+║   23 │ fingerprint_error_info_not_found         │ nid_fingerprint_mismatch_sim_issue_01    │      4 ║
+║   24 │ foreign_address_entry_tips               │ foreign_address_fields                   │      4 ║
+║   25 │ husband_name_previous_card               │ no_husband_name_in_smart_card            │      4 ║
+║   26 │ login_after_registration                 │ login_credentials_required               │      4 ║
+║   27 │ new_voter_online_what_documents_to_sub.. │ new_voter_apply_online_what_documents_.. │      4 ║
+║   28 │ nid_afis_04                              │ nid_fingerprint_mismatch_sim_issue_01    │      4 ║
+║   29 │ nid_fee_wrong_nid_refund_01              │ nid_fee_04                               │      4 ║
+║   30 │ nid_probashi_smart_card_03               │ nid_probashi_smart_card_09               │      4 ║
+║   31 │ nid_registration_age                     │ nid_probashi_registration_04             │      4 ║
+║   32 │ online_card_correction                   │ how_to_apply_for_correction_in_online_.. │      4 ║
+║   33 │ password_character_requirements          │ password_requirements                    │      4 ║
+║   34 │ smart_card_collection_fees               │ smart_card_fee                           │      4 ║
+║   35 │ age_and_dob_correction                   │ birth_certificate_number_correct_or_ad.. │      3 ║
+║   36 │ age_and_dob_correction                   │ birthplace_correction_new                │      3 ║
+║   37 │ app_requirements_internet_gps_vpn        │ preparation_before_app_use               │      3 ║
+║   38 │ card_information_correction              │ nid_information_misentry_correction_pr.. │      3 ║
+║   39 │ card_lost_and_damaged_cost               │ card_lost_new_card_fee                   │      3 ║
+║   40 │ card_lost_new_card_fee                   │ card_lost_and_damaged_cost               │      3 ║
+║   41 │ card_lost_no_info_how_to_get_new         │ nid_reissue_07                           │      3 ║
+║   42 │ correction_application_rejected_need_n.. │ card_correction_request_failed_query_r.. │      3 ║
+║   43 │ correction_application_status            │ correction_application_current_status    │      3 ║
+║   44 │ new_voter_online_what_documents_to_sub.. │ foreign_resident_card_registration_req.. │      3 ║
+║   45 │ new_voter_online_what_documents_to_sub.. │ nid_probashi_registration_05             │      3 ║
+║   46 │ nid_biometric_update_not_working_01      │ fingerprint_error_info_not_found         │      3 ║
+║   47 │ nid_missing_fingerprint_sim_issue_01     │ fingerprint_error_info_not_found         │      3 ║
+║   48 │ nid_probashi_smart_card_06               │ card_damaged_how_to_get_new_card         │      3 ║
+║   49 │ nid_wallet_download_iphone               │ no_android_phone                         │      3 ║
+║   50 │ notification_menu_contents               │ notification_screen_info                 │      3 ║
+║   51 │ qr_scan_mandatory                        │ qr_scan_instructions                     │      3 ║
+║   52 │ selfie_capture_guidelines                │ selfie_required_reason                   │      3 ║
+║   53 │ tracking_status_meaning                  │ ballot_tracking_definition               │      3 ║
+║   54 │ tracking_status_meaning                  │ vote_tracking_definition                 │      3 ║
+║   55 │ account_locked_retrials                  │ information_correct_but_account_locked   │      2 ║
+║   56 │ address_change_card_download_process     │ no_download_option_after_correction      │      2 ║
+║   57 │ card_damaged_how_to_get_new_card         │ card_lost_no_info_how_to_get_new         │      2 ║
+║   58 │ card_lost_no_info_how_to_get_new         │ voter_slip_lost_how_to_get_nid           │      2 ║
+║   59 │ correction_application_current_status    │ nid_correction_online_06                 │      2 ║
+║   60 │ correction_application_rejected_need_n.. │ card_correction_request_failed_query_r.. │      2 ║
+║   61 │ correction_fee_payment                   │ card_correction_fees                     │      2 ║
+║   62 │ correction_slip_lost_can_get_card        │ correction_application_current_status    │      2 ║
+║   63 │ double_voter_registration_issue          │ nid_match_found_verification_failed_ho.. │      2 ║
+║   64 │ foreign_resident_card_registration_que.. │ nid_probashi_service_countries_01        │      2 ║
+║   65 │ help_center_access                       │ help_contact_location                    │      2 ║
+║   66 │ login_safety_precautions                 │ security_best_practices                  │      2 ║
+║   67 │ new_voter_application_cancelled          │ double_voter_registration_issue          │      2 ║
+║   68 │ nid_adjudication_pending                 │ foreign_resident_nid_adjudication_pend.. │      2 ║
+║   69 │ nid_correction_category_approver_07      │ nid_correction_category_approver_05      │      2 ║
+║   70 │ nid_correction_online_06                 │ correction_application_current_status    │      2 ║
+║   71 │ nid_fee_04                               │ nid_fee_wrong_nid_refund_01              │      2 ║
+║   72 │ nid_fee_06                               │ new_voter_fees                           │      2 ║
+║   73 │ nid_misc_04                              │ dead_people_id_card_update               │      2 ║
+║   74 │ nid_probashi_registration_02             │ nid_information_misentry_correction_pr.. │      2 ║
+║   75 │ nid_probashi_smart_card_03               │ nid_probashi_smart_card_04               │      2 ║
+║   76 │ nid_reissue_07                           │ card_lost_no_info_how_to_get_new         │      2 ║
+║   77 │ nid_reissue_07                           │ voter_slip_lost_how_to_get_nid           │      2 ║
+║   78 │ no_husband_name_in_smart_card            │ husband_name_previous_card               │      2 ║
+║   79 │ photo_done_years_ago_but_no_card         │ picture_done_but_lost_or_no_sms_slip     │      2 ║
+║   80 │ pre_use_privacy_policy_read              │ preparation_before_app_use               │      2 ║
+║   81 │ present_address_change_procedure         │ persent_address_correction_procedure     │      2 ║
+║   82 │ present_address_change_procedure         │ present_and_permanent_address_generic_.. │      2 ║
+║   83 │ smart_card_lost_reissue                  │ nid_voter_area_transfer_07               │      2 ║
+║   84 │ voter_slip_lost_how_to_get_nid           │ picture_done_but_lost_or_no_sms_slip     │      2 ║
+║   85 │ when_to_seek_help                        │ help_center_definition                   │      2 ║
+║   86 │ wish_to_create_nid_smart_card_new        │ online_new_voter_registration            │      2 ║
+║   87 │ wrongly_dead_declared                    │ parents_or_spouse_death_related_docume.. │      2 ║
+║   88 │ account_locked                           │ account_locked_unlock_request            │      1 ║
+║   89 │ address_change_sms_to_mobile_how_many_.. │ permanent_address_change_process_durat.. │      1 ║
+║   90 │ after_success_login_button               │ registration_steps_count                 │      1 ║
+║   91 │ age_and_dob_correction                   │ name_correction_in_nid_card              │      1 ║
+║   92 │ all_documents_correct_but_application_.. │ foreign_resident_card_registration_rej.. │      1 ║
+║   93 │ app_requirements_internet_gps_vpn        │ process_requirements                     │      1 ║
+║   94 │ auto_logout_inactivity                   │ login_after_logout                       │      1 ║
+║   95 │ ballot_packing_instructions              │ ballot_marking_instructions              │      1 ║
+║   96 │ ballot_tracking_definition               │ vote_tracking_definition                 │      1 ║
+║   97 │ card_avail_after_address_change          │ permanent_address_new                    │      1 ║
+║   98 │ card_correction_request_canceled_by_co.. │ card_correction_request_failed_query_r.. │      1 ║
+║   99 │ card_correction_request_canceled_by_co.. │ card_correction_request_failed_query_r.. │      1 ║
+║  100 │ card_correction_request_failed_query_r.. │ correction_fee_payment                   │      1 ║
+║  101 │ card_damaged_how_to_get_new_card         │ how_to_apply_for_correction_in_online_.. │      1 ║
+║  102 │ card_damaged_how_to_get_new_card         │ new_voter_card_getting_time              │      1 ║
+║  103 │ card_damaged_how_to_get_new_card         │ nid_probashi_smart_card_06               │      1 ║
+║  104 │ card_damaged_how_to_get_new_card         │ receipt_lost_how_to_get_new_card         │      1 ║
+║  105 │ card_damaged_how_to_get_new_card         │ voter_slip_lost_how_to_get_nid           │      1 ║
+║  106 │ card_information_correction              │ age_and_dob_correction                   │      1 ║
+║  107 │ card_information_correction              │ how_to_apply_for_correction_in_online_.. │      1 ║
+║  108 │ card_information_correction              │ unexpected_online_problem                │      1 ║
+║  109 │ card_lost_and_damaged_cost               │ card_damaged_how_to_get_new_card         │      1 ║
+║  110 │ card_lost_and_damaged_cost               │ nid_probashi_smart_card_06               │      1 ║
+║  111 │ card_lost_and_damaged_cost               │ smart_card_lost_reissue                  │      1 ║
+║  112 │ card_lost_new_card_fee                   │ card_correction_fees                     │      1 ║
+║  113 │ data_security_assurance                  │ login_safety_precautions                 │      1 ║
+║  114 │ double_voter_registration_issue          │ nid_probashi_application_rejected_02     │      1 ║
+║  115 │ fingerprint_error_info_not_found         │ nid_afis_04                              │      1 ║
+║  116 │ foreign_resident_card_picture_done__in.. │ foreign_resident_card_picture_done_not.. │      1 ║
+║  117 │ forgot_password_flow                     │ password_reset_required_info             │      1 ║
+║  118 │ form_number_not_working                  │ new_voter_card_not_taken_has_form_no_c.. │      1 ║
+║  119 │ help_center_contents                     │ call_center_bengali_support              │      1 ║
+║  120 │ help_center_contents                     │ help_contact_location                    │      1 ║
+║  121 │ help_center_contents                     │ help_service_key_points                  │      1 ║
+║  122 │ help_center_definition                   │ help_center_contents                     │      1 ║
+║  123 │ help_contact_location                    │ when_to_seek_help                        │      1 ║
+║  124 │ help_service_key_points                  │ help_center_contents                     │      1 ║
+║  125 │ help_service_key_points                  │ help_center_definition                   │      1 ║
+║  126 │ how_to_apply_for_correction_in_online_.. │ card_information_correction              │      1 ║
+║  127 │ incorrect_info_restart                   │ how_to_apply_for_correction_in_online_.. │      1 ║
+║  128 │ liveness_check_steps                     │ liveness_check_avoid                     │      1 ║
+║  129 │ liveness_check_steps                     │ liveness_check_purpose                   │      1 ║
+║  130 │ location_service_required_reason         │ app_not_opening_troubleshoot             │      1 ║
+║  131 │ login_after_registration                 │ registration_steps_count                 │      1 ║
+║  132 │ login_safety_precautions                 │ instruction_following_tips               │      1 ║
+║  133 │ mobile_number_entry                      │ app_download_sources                     │      1 ║
+║  134 │ name_correction_in_nid_card              │ spouse_name_correction_new               │      1 ║
+║  135 │ new_voter_application_cancelled          │ new_voter_no_messages_from_upzila_or_t.. │      1 ║
+║  136 │ new_voter_application_not_submitted_to.. │ new_voter_registered_where_To_submit_t.. │      1 ║
+║  137 │ new_voter_apply_online_what_documents_.. │ new_voter_registered_where_To_submit_t.. │      1 ║
+║  138 │ new_voter_but_card_rejected              │ foreign_resident_card_registration_rej.. │      1 ║
+║  139 │ new_voter_card_getting_time              │ nid_appeal_disposal_time_01              │      1 ║
+║  140 │ new_voter_got_normal_card_when_get_sma.. │ new_voter_smart_card_how_to_get          │      1 ║
+║  141 │ new_voter_online_what_documents_to_sub.. │ reissue_supporting_document              │      1 ║
+║  142 │ new_voter_registered_where_To_submit_t.. │ online_new_voter_registration            │      1 ║
+║  143 │ nid_address_update_08                    │ permanent_address_change_process_durat.. │      1 ║
+║  144 │ nid_afis_01                              │ nid_afis_04                              │      1 ║
+║  145 │ nid_afis_01                              │ nid_fingerprint_mismatch_sim_issue_01    │      1 ║
+║  146 │ nid_afis_01                              │ nid_missing_fingerprint_sim_issue_01     │      1 ║
+║  147 │ nid_afis_04                              │ fingerprint_error_info_not_found         │      1 ║
+║  148 │ nid_biometric_update_not_working_01      │ finderprint_adjudication_pending         │      1 ║
+║  149 │ nid_biometric_update_not_working_01      │ nid_fingerprint_mismatch_sim_issue_01    │      1 ║
+║  150 │ nid_biometric_update_status_01           │ fingerprint_update_applied_not_approved  │      1 ║
+║  151 │ nid_biometric_update_status_01           │ nid_fee_03                               │      1 ║
+║  152 │ nid_biometric_update_status_01           │ post_submission_verification             │      1 ║
+║  153 │ nid_correction_categories_01             │ correction_application_current_status    │      1 ║
+║  154 │ nid_correction_category_approver_01      │ nid_correction_category_approver_03      │      1 ║
+║  155 │ nid_correction_category_approver_02      │ nid_correction_category_approver_04      │      1 ║
+║  156 │ nid_correction_category_approver_03      │ nid_correction_category_approver_01      │      1 ║
+║  157 │ nid_correction_category_approver_03      │ nid_correction_category_approver_04      │      1 ║
+║  158 │ nid_correction_category_approver_04      │ nid_correction_category_approver_03      │      1 ║
+║  159 │ nid_correction_category_approver_04      │ nid_correction_category_approver_06      │      1 ║
+║  160 │ nid_correction_category_approver_05      │ nid_correction_category_approver_01      │      1 ║
+║  161 │ nid_correction_category_approver_05      │ nid_correction_category_approver_07      │      1 ║
+║  162 │ nid_correction_category_approver_06      │ nid_correction_category_approver_07      │      1 ║
+║  163 │ nid_correction_category_approver_07      │ nid_correction_category_approver_01      │      1 ║
+║  164 │ nid_correction_online_02                 │ nid_probashi_registration_02             │      1 ║
+║  165 │ nid_correction_online_08                 │ profession_change                        │      1 ║
+║  166 │ nid_fee_07                               │ instant_card_correction_fee              │      1 ║
+║  167 │ nid_fee_09                               │ smart_card_lost_how_to_get_new_one_again │      1 ║
+║  168 │ nid_fee_09                               │ smart_card_lost_reissue                  │      1 ║
+║  169 │ nid_fingerprint_mismatch_sim_issue_01    │ fingerprint_error_info_not_found         │      1 ║
+║  170 │ nid_fingerprint_mismatch_sim_issue_01    │ nid_afis_04                              │      1 ║
+║  171 │ nid_information_misentry_correction_pr.. │ correction_application_current_status    │      1 ║
+║  172 │ nid_information_misentry_correction_pr.. │ correction_applied_more_correction_nee.. │      1 ║
+║  173 │ nid_misc_07                              │ parent_no_card_failed_to_be_voter        │      1 ║
+║  174 │ nid_new_registration_04                  │ nid_match_found_verification_failed_ho.. │      1 ║
+║  175 │ nid_photo_guidelines                     │ registration_steps_count                 │      1 ║
+║  176 │ nid_postal_vote_abroad_01                │ foreign_resident_card_registration_pro.. │      1 ║
+║  177 │ nid_probashi_address_requirement_01      │ nid_address_update_10                    │      1 ║
+║  178 │ nid_probashi_eligibility_01              │ nid_opportunity_for_foreign_spouse       │      1 ║
+║  179 │ nid_probashi_registration_02             │ card_information_correction              │      1 ║
+║  180 │ nid_probashi_registration_03             │ address_cahgne_but_no_post_office_or_o.. │      1 ║
+║  181 │ nid_probashi_registration_04             │ new_nid_card_age                         │      1 ║
+║  182 │ nid_probashi_smart_card_01               │ nrb_application_status                   │      1 ║
+║  183 │ nid_probashi_smart_card_03               │ nid_probashi_smart_card_08               │      1 ║
+║  184 │ nid_probashi_smart_card_06               │ smart_card_distributed_in_my_area_but_.. │      1 ║
+║  185 │ nid_probashi_smart_card_06               │ voter_card_damaged                       │      1 ║
+║  186 │ nid_probashi_smart_card_06               │ voter_slip_lost_how_to_get_nid           │      1 ║
+║  187 │ nid_probashi_smart_card_08               │ nid_probashi_smart_card_04               │      1 ║
+║  188 │ nid_registration_age                     │ birth_certificate_number_correct_or_ad.. │      1 ║
+║  189 │ nid_reissue_01                           │ nid_reissue_06                           │      1 ║
+║  190 │ nid_reissue_03                           │ card_reissue_fees                        │      1 ║
+║  191 │ nid_reissue_07                           │ nid_probashi_application_rejected_02     │      1 ║
+║  192 │ nid_reissue_07                           │ receipt_lost_how_to_get_new_card         │      1 ║
+║  193 │ nid_reissue_07                           │ unable_to_answer                         │      1 ║
+║  194 │ nid_required_for_registration            │ passport_info_required                   │      1 ║
+║  195 │ nid_verification_failed                  │ nid_verification_definition              │      1 ║
+║  196 │ nid_vote_without_card_01                 │ nid_misc_01                              │      1 ║
+║  197 │ nid_voter_area_transfer_01               │ permanent_address_change_fees            │      1 ║
+║  198 │ nid_wallet_download                      │ online_apply                             │      1 ║
+║  199 │ no_android_phone                         │ nid_wallet_download_iphone               │      1 ║
+║  200 │ not_getting_smart_card_though_newer_vo.. │ nid_probashi_smart_card_03               │      1 ║
+║  201 │ not_getting_smart_card_though_newer_vo.. │ smart_card_distributed_in_my_area_but_.. │      1 ║
+║  202 │ not_getting_smart_card_though_newer_vo.. │ smart_card_from_where                    │      1 ║
+║  203 │ online_application_pending               │ correction_application_current_status    │      1 ║
+║  204 │ online_apply                             │ unable_to_answer                         │      1 ║
+║  205 │ online_portal_registration               │ unable_to_answer                         │      1 ║
+║  206 │ otp_entry_screen                         │ otp_length                               │      1 ║
+║  207 │ otp_entry_screen                         │ otp_send_button                          │      1 ║
+║  208 │ parent_spouse_name_correct_or_add_docu.. │ nid_information_misentry_correction_pr.. │      1 ║
+║  209 │ parents_or_spouse_death_related_docume.. │ nid_correction_online_04                 │      1 ║
+║  210 │ parents_or_spouse_death_related_docume.. │ wrongly_dead_declared                    │      1 ║
+║  211 │ password_change_frequency                │ password_change_process                  │      1 ║
+║  212 │ password_requirements                    │ password_character_requirements          │      1 ║
+║  213 │ password_requirements                    │ password_min_length                      │      1 ║
+║  214 │ password_requirements                    │ strong_password_importance               │      1 ║
+║  215 │ password_reset_required_info             │ forgot_password_flow                     │      1 ║
+║  216 │ password_sharing_warning                 │ password_requirements                    │      1 ║
+║  217 │ photo_correction                         │ picture_done_but_lost_or_no_sms_slip     │      1 ║
+║  218 │ photo_signature_change_application_not.. │ fingerprint_update_applied_not_approved  │      1 ║
+║  219 │ photo_sms_but_not_in_upzila_other_when   │ foreign_resident_card_picture_done__in.. │      1 ║
+║  220 │ photo_sms_but_not_in_upzila_other_when   │ new_voter_application_not_submitted_to.. │      1 ║
+║  221 │ photo_sms_but_not_in_upzila_other_when   │ sms_after_picture_how_many_days          │      1 ║
+║  222 │ picture_done_but_lost_or_no_sms_slip     │ photo_done_years_ago_but_no_card         │      1 ║
+║  223 │ picture_done_but_lost_or_no_sms_slip     │ voter_slip_lost_how_to_get_nid           │      1 ║
+║  224 │ post_login_page_not_loading              │ login_page_not_opening                   │      1 ║
+║  225 │ post_login_page_not_loading              │ security_check_failed                    │      1 ║
+║  226 │ post_registration_password_reset         │ password_reset_required_info             │      1 ║
+║  227 │ post_submission_verification             │ verification_time                        │      1 ║
+║  228 │ preparation_before_app_use               │ app_requirements_internet_gps_vpn        │      1 ║
+║  229 │ present_address_change_procedure         │ nid_address_update_12                    │      1 ║
+║  230 │ present_address_change_procedure         │ permanent_address_update_procedure       │      1 ║
+║  231 │ present_address_change_procedure         │ voter_area_change                        │      1 ║
+║  232 │ previous_information_in_downloaded_car.. │ no_download_option_after_correction      │      1 ║
+║  233 │ problem_help_suggestion                  │ when_to_seek_help                        │      1 ║
+║  234 │ qr_scan_instructions                     │ qr_scan_mandatory                        │      1 ║
+║  235 │ registration_start_country_select        │ registration_start_button                │      1 ║
+║  236 │ reigister_as_new_voter_but_birth_regis.. │ new_voter_identifier_who                 │      1 ║
+║  237 │ relogin_credentials_required             │ login_after_logout                       │      1 ║
+║  238 │ security_check_failed                    │ nid_verification_failed                  │      1 ║
+║  239 │ security_check_failed                    │ verification_in_progress_wait            │      1 ║
+║  240 │ selfie_capture_guidelines                │ camera_issue_registration                │      1 ║
+║  241 │ sem_app_info_08                          │ sem_app_info_01                          │      1 ║
+║  242 │ sem_app_info_09                          │ sem_app_info_03                          │      1 ║
+║  243 │ smart_card_distributed_in_my_area_but_.. │ not_getting_smart_card_though_newer_vo.. │      1 ║
+║  244 │ smart_card_lost_how_to_get_new_one_again │ nid_probashi_smart_card_06               │      1 ║
+║  245 │ smart_card_lost_how_to_get_new_one_again │ voter_slip_lost_how_to_get_nid           │      1 ║
+║  246 │ smart_card_printing_status_sms_how       │ smart_card_ready_sms                     │      1 ║
+║  247 │ smart_card_status                        │ nid_smart_card_print_status_01           │      1 ║
+║  248 │ smart_card_status                        │ smart_card_printing_status_sms_how       │      1 ║
+║  249 │ verification_completion_notification     │ unable_to_answer                         │      1 ║
+║  250 │ video_tutorial_why                       │ pre_voting_video_mandatory               │      1 ║
+║  251 │ vote_tracking_definition                 │ ballot_tracking_steps                    │      1 ║
+║  252 │ voter_card_damaged                       │ reissue_supporting_document              │      1 ║
+║  253 │ voter_card_damaged                       │ voter_slip_lost_how_to_get_nid           │      1 ║
+║  254 │ voter_halnagad_registration_not_done     │ wish_to_create_nid_smart_card_new        │      1 ║
+║  255 │ voter_migration_done_now_what_to_do_fo.. │ voter_area_change                        │      1 ║
+║  256 │ voter_slip_lost_how_to_get_nid           │ card_lost_no_info_how_to_get_new         │      1 ║
+║  257 │ voting_precautions                       │ accepted_nid_types                       │      1 ║
+║  258 │ voting_precautions                       │ foreign_address_entry_tips               │      1 ║
+║  259 │ when_to_seek_help                        │ help_center_access                       │      1 ║
+║  260 │ when_to_seek_help                        │ pre_use_privacy_policy_read              │      1 ║
+║  261 │ wish_to_create_nid_smart_card_new        │ nid_afis_03                              │      1 ║
+║  262 │ wrong_information_in_online_applicatio.. │ online_portal_registration               │      1 ║
+║  263 │ wrong_otp_registration                   │ post_registration_password_reset         │      1 ║
+║  264 │ wrong_otp_registration                   │ wrong_info_penalty                       │      1 ║
+║  265 │ wrongly_dead_declared                    │ parent_no_card_failed_to_be_voter        │      1 ║
+╚════════════════════════════════════════════════════════════════════════════════════════════════╝

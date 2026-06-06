@@ -129,9 +129,11 @@ OUTPUT_FILE = "merged_dataset_YYYY-MM-DD.csv"
 
 ## 📊 4. Wrong Tag Analysis (`wrong_tag_analysis.py`)
 
-Analyzes prediction accuracy per tag from evaluation results. Shows right/wrong counts and accuracy percentages.
+Analyzes prediction accuracy per tag from evaluation results. Shows right/wrong counts and accuracy percentages. Also supports removing mismatched queries from train/test datasets.
 
-### Commands
+### 4.1 Analysis Mode
+
+Analyze prediction accuracy per tag.
 
 **Basic analysis (sorted by count, descending):**
 ```bash
@@ -158,7 +160,7 @@ python wrong_tag_analysis.py ec_full_evaluation_threshold_0.923.csv -c 1 --top 2
 python wrong_tag_analysis.py ec_full_evaluation_threshold_0.923.csv -n 1
 ```
 
-### Options
+#### Analysis Options
 
 | Option | Short | Values | Description |
 |--------|-------|--------|-------------|
@@ -168,16 +170,7 @@ python wrong_tag_analysis.py ec_full_evaluation_threshold_0.923.csv -n 1
 | `--top` | `-t` | int | Show only top N tags |
 | `--ascending` | | flag | Sort in ascending order (default: descending) |
 
-### Input CSV Format
-
-The evaluation CSV should have these columns:
-
-| question | similar question | expected tag | predicted tag | time taken |
-|----------|-----------------|--------------|---------------|------------|
-| Query... | Similar... | tag_a | tag_a | 0.65 |
-| Query... | Similar... | tag_b | tag_c | 0.72 |
-
-### Output Example
+#### Analysis Output Example
 
 ```
 ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
@@ -196,12 +189,124 @@ The evaluation CSV should have these columns:
 Legend: ✓ = ≥90% | ~ = 70-89% | ✗ = <70%
 ```
 
-### Python API
+---
+
+### 4.2 Mismatch Removal Mode
+
+Remove mismatched queries from both test and train datasets. This is useful for cleaning up datasets after evaluation to improve model accuracy.
+
+#### What it does:
+1. Reads the mismatches CSV (queries where predicted ≠ expected)
+2. Removes the `question` from test dataset (`sts_eval_updated.csv`)
+3. Removes the `similar question` from train dataset (`question_tag_answer.csv`)
+4. Saves removed queries to `removed_test.csv` and `removed_train.csv`
+5. Generates a detailed `report.log` with per-tag removal counts
+
+#### Commands
+
+**Basic mismatch removal:**
+```bash
+python wrong_tag_analysis.py ec_full_evaluation_mismatches_threshold_0.923.csv \
+    --remove-mismatches \
+    --test-csv sts_eval_updated.csv \
+    --train-csv question_tag_answer.csv
+```
+
+**With custom output directory:**
+```bash
+python wrong_tag_analysis.py ec_full_evaluation_mismatches_threshold_0.923.csv \
+    --remove-mismatches \
+    --test-csv sts_eval_updated.csv \
+    --train-csv question_tag_answer.csv \
+    --output-dir cleanup_output
+```
+
+**Short form:**
+```bash
+python wrong_tag_analysis.py ec_full_evaluation_mismatches_threshold_0.923.csv -r \
+    --test-csv sts_eval_updated.csv \
+    --train-csv question_tag_answer.csv \
+    -o cleanup_output
+```
+
+#### Removal Options
+
+| Option | Short | Default | Description |
+|--------|-------|---------|-------------|
+| `--remove-mismatches` | `-r` | - | Enable removal mode |
+| `--test-csv` | | `sts_eval_updated.csv` | Path to test dataset CSV |
+| `--train-csv` | | `question_tag_answer.csv` | Path to train dataset CSV |
+| `--output-dir` | `-o` | `.` | Output directory for removed files and report |
+
+#### Output Files
+
+| File | Description |
+|------|-------------|
+| `removed_test.csv` | Queries removed from test dataset (question, tag) |
+| `removed_train.csv` | Queries removed from train dataset (question, tag, answer) |
+| `report.log` | Detailed removal counts per tag |
+
+#### Input CSV Formats
+
+**Mismatches CSV** (e.g., `ec_full_evaluation_mismatches_threshold_0.923.csv`):
+
+| question | similar question | expected tag | predicted tag | time taken |
+|----------|-----------------|--------------|---------------|------------|
+| Test query... | Train query... | expected_tag | wrong_predicted_tag | 0.65 |
+
+**Test CSV** (e.g., `sts_eval_updated.csv`):
+
+| question | tag |
+|----------|-----|
+| Test query... | tag_name |
+
+**Train CSV** (e.g., `question_tag_answer.csv`):
+
+| question | tag | answer |
+|----------|-----|--------|
+| Train query... | tag_name | Answer text... |
+
+#### Sample report.log
+
+```
+================================================================================
+MISMATCH QUERY REMOVAL REPORT
+Generated: 2025-12-30 14:30:45
+================================================================================
+
+SUMMARY
+----------------------------------------
+Total test queries removed:  1267
+Total train queries removed: 1267
+Test queries remaining:      10191
+Train queries remaining:     77355
+Unique tags affected:        89
+
+REMOVAL COUNTS BY TAG
+--------------------------------------------------------------------------------
+#     Tag Name                                           Test       Train      Total     
+--------------------------------------------------------------------------------
+1     how_to_complain_not_getting_help_from_election..   45         45         90        
+2     online_new_voter_registration                      38         38         76        
+3     card_information_correction                        32         32         64        
+4     nid_correction_general                             28         28         56        
+5     voter_registration_process                         25         25         50        
+...
+--------------------------------------------------------------------------------
+TOTAL                                                    1267       1267       2534      
+================================================================================
+```
+
+---
+
+### 4.3 Python API
 
 ```python
 from wrong_tag_analysis import TagAnalyzer
 
 analyzer = TagAnalyzer()
+
+# --- Analysis Mode ---
 analyzer.load_evaluation_csv("evaluation_results.csv")
 
 # Print analysis with different sorting
@@ -212,6 +317,18 @@ analyzer.print_tag_analysis(sort_by_name=1)                        # Alphabetica
 # Get worst/best performing tags
 worst_tags = analyzer.get_worst_tags(n=10)
 best_tags = analyzer.get_best_tags(n=10)
+
+# --- Mismatch Removal Mode ---
+removal_stats = analyzer.remove_mismatched_queries(
+    mismatches_csv="ec_full_evaluation_mismatches_threshold_0.923.csv",
+    test_csv="sts_eval_updated.csv",
+    train_csv="question_tag_answer.csv",
+    output_dir="cleanup_output"
+)
+
+# removal_stats is a dict: {tag_name: {'test': count, 'train': count}, ...}
+for tag, counts in removal_stats.items():
+    print(f"{tag}: removed {counts['test']} from test, {counts['train']} from train")
 ```
 
 ---
